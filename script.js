@@ -88,30 +88,46 @@ document.addEventListener('DOMContentLoaded', () => {
         todoList.innerHTML = '';
 
         filteredTodos.forEach(todo => {
-            const todoElement = document.createElement('div');
-            todoElement.className = 'todo-item';
-            todoElement.innerHTML = `
-                <div class="todo-checkbox ${todo.completed ? 'checked' : ''}"
-                     onclick="window.toggleTodo('${todo.id}')"></div>
-                <div class="todo-content">
-                    <div class="todo-text ${todo.completed ? 'completed' : ''}">${todo.text}</div>
-                    <div class="todo-meta">
-                        <span>${todo.category}</span>
-                        <span>•</span>
-                        <span>${todo.priority}</span>
-                        ${todo.dueDate ? `<span>•</span><span>Due: ${formatDate(todo.dueDate)}</span>` : ''}
-                    </div>
-                </div>
-                <div class="todo-actions">
-                    <button class="btn-delete" onclick="window.deleteTodo('${todo.id}')">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
-                        </svg>
-                    </button>
-                </div>
-            `;
-            todoList.appendChild(todoElement);
-        });
+    const todoElement = document.createElement('div');
+    todoElement.className = 'todo-item';
+    
+    // Create the checkbox div dynamically
+    const todoCheckbox = document.createElement('div');
+    todoCheckbox.className = `todo-checkbox ${todo.completed ? 'checked' : ''}`;
+    todoCheckbox.addEventListener('click', () => toggleTodo(todo.id));
+
+    // Create the content div
+    const todoContent = document.createElement('div');
+    todoContent.className = 'todo-content';
+    todoContent.innerHTML = `
+        <div class="todo-text ${todo.completed ? 'completed' : ''}">${todo.text}</div>
+        <div class="todo-meta">
+            <span>${todo.category}</span>
+            <span>•</span>
+            <span>${todo.priority}</span>
+            ${todo.dueDate ? `<span>•</span><span>Due: ${formatDate(todo.dueDate)}</span>` : ''}
+        </div>
+    `;
+    
+    // Create the actions div
+    const todoActions = document.createElement('div');
+    todoActions.className = 'todo-actions';
+    todoActions.innerHTML = `
+        <button class="btn-delete">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+            </svg>
+        </button>
+    `;
+    todoActions.querySelector('button').addEventListener('click', () => deleteTodo(todo.id));
+    
+    // Append all parts to the todo element
+    todoElement.appendChild(todoCheckbox);
+    todoElement.appendChild(todoContent);
+    todoElement.appendChild(todoActions);
+
+    todoList.appendChild(todoElement);
+});
     }
 
     function resetForm() {
