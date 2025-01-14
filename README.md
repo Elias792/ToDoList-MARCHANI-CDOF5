@@ -1,6 +1,7 @@
 # ToDo List - Decentralization Technologies
 
 Une application de gestion de tâches simple et intuitive développée en **HTML**, **CSS** et **JavaScript**. Ce projet a été réalisé dans le cadre du TD *"Contribute to the Open Source Movement"* pour apprendre les bases des contributions open source.
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/7e7a7f44-a37e-45c2-99be-444e4b5f080a" />
 
 ## Fonctionnalités
 
