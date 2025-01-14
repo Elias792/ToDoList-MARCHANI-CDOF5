@@ -18,3 +18,9 @@ Une application de gestion de tâches simple et intuitive développée en **HTML
    git clone https://github.com/Elias792/ToDoList-MARCHANI-CDOF5.git
    cd ToDoList-MARCHANI-CDOF5
 
+## Prérequis
+Pour voir l'application sur votre machine, vous aurez besoin de :
+
+- Visual Studio Code, ou un autre IDE fonctionnel avec des extensions pour HTML, CSS, JavaScript et TypeScript.
+- Node.js et npm, à installer sur https://nodejs.org/.
+- TypeScript installé avec npm install -g typescript et tsc pour le compiler. 
