@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List Decentralization Technologies</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <svg class="network-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 2H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 2v6m0-6V1m0 7v4m0-4h6m-6 4v4m0-4h6m6-7v10a2 2 0 0 1-2 2h-4M3 8v10a2 2 0 0 0 2 2h4"/>
+                </svg>
+            </div>
+            <h1>ToDo List Decentralization Technologies</h1>
+        </header>
+
+        <div class="add-todo">
+            <input type="text" id="todoInput" placeholder="Ajouter une nouvelle tâche...">
+            <div class="todo-details hidden" id="todoDetails">
+                <select id="category">
+                    <option value="personal">Personnel</option>
+                    <option value="work">Travail</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="health">Santé</option>
+                    <option value="other">Autre</option>
+                </select>
+                <select id="priority">
+                    <option value="low">Priorité Basse</option>
+                    <option value="medium">Priorité Moyenne</option>
+                    <option value="high">Priorité Haute</option>
+                </select>
+                <input type="date" id="dueDate">
+                <button id="addTodoBtn" class="btn-add">Ajouter</button>
+            </div>
+        </div>
+
+        <div class="filters">
+            <button id="toggleFilters" class="btn-filter">Filtres</button>
+            <div class="filters-panel hidden" id="filtersPanel">
+                <select id="filterCategory">
+                    <option value="">Toutes les catégories</option>
+                    <option value="personal">Personnel</option>
+                    <option value="work">Travail</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="health">Santé</option>
+                    <option value="other">Autre</option>
+                </select>
+                <select id="filterPriority">
+                    <option value="">Toutes les priorités</option>
+                    <option value="low">Priorité Basse</option>
+                    <option value="medium">Priorité Moyenne</option>
+                    <option value="high">Priorité Haute</option>
+                </select>
+                <select id="filterStatus">
+                    <option value="">Tous les statuts</option>
+                    <option value="active">En cours</option>
+                    <option value="completed">Terminé</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="todoList" class="todo-list"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
